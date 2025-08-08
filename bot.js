@@ -8,6 +8,7 @@ const express = require('express');
 const BOT_NAME = 'AntiAFK_Bot';
 const HOST = 'AidensServer.aternos.me';
 const PORT = 51889;
+const VERSION = '1.20.4'; // Change to your exact server version if different
 
 // ===== EXPRESS SERVER FOR UPTIMEROBOT =====
 const app = express();
@@ -20,7 +21,8 @@ function startBot() {
     host: HOST,
     port: PORT,
     username: BOT_NAME,
-    version: false
+    version: VERSION,
+    physicsEnabled: false // 🚫 disables knockback & collision to prevent crashes
   });
 
   function antiAFK() {
